@@ -2,6 +2,7 @@
 const express = require("express");
 const fs = require("fs").promises;
 const path = require("path");
+const cors = require("cors");
 
 // Create the Express application
 const app = express();
@@ -21,6 +22,7 @@ const ALLOWED_STATUSES = [
 
 // Middleware that allows Express to read JSON request bodies
 app.use(express.json());
+app.use(cors());
 
 /*
   Create courses.json automatically if it does not exist.
